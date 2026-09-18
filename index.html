@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Design & SEO Sabah | Studio Pro | Expert Digital Agency</title>
+    <meta name="description" content="Boost your visibility with Studio Pro, Sabah's expert web design and SEO studio. We build high-performing, modern websites in Kota Kinabalu to grow your business.">
+    <meta name="theme-color" content="#101014">
+    <link rel="icon" type="image/png" href="assets/img/prostudio-logo.jpeg">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Studio Pro">
+    <meta property="og:url" content="https://prostudio.my/">
+    <meta property="og:title" content="Studio Pro — Web Design & SEO | Engaging Websites">
+    <meta property="og:description" content="Clean modern web design and smart SEO from Sabah. User-first design, responsive layouts, and a personal approach.">
+    <meta property="og:image" content="https://prostudio.my/assets/img/og-cover.png?v=4">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Studio Pro — Web design & SEO">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Studio Pro — Web Design & SEO | Engaging Websites">
+    <meta name="twitter:description" content="Clean modern web design and smart SEO from Sabah. User-first design and a personal approach.">
+    <meta name="twitter:image" content="https://prostudio.my/assets/img/og-cover.png?v=1">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css?v=4">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebDesignService",
+        "name": "Studio Pro",
+        "url": "https://prostudio.my",
+        "logo": "https://prostudio.my/assets/img/prostudio-logo.jpeg",
+        "image": "https://prostudio.my/assets/img/og-cover.png",
+        "description": "Expert web design, UX wireframes and SEO optimisation studio based in Kota Kinabalu, Sabah. Specializing in high-performing, modern websites for Sabah businesses.",
+        "email": "sales@prostudio.my",
+        "telephone": "+60 13-869-9933",
+        "priceRange": "$$",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Kota Kinabalu",
+            "addressRegion": "Sabah",
+            "addressCountry": "MY"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "5.9804",
+            "longitude": "116.0735"
+        },
+        "areaServed": [
+            { "@type": "City", "name": "Kota Kinabalu" },
+            { "@type": "State", "name": "Sabah" },
+            { "@type": "Country", "name": "Malaysia" }
+        ],
+        "knowsAbout": [
+            "Web Design Sabah",
+            "SEO Kota Kinabalu",
+            "UX Wireframes",
+            "Local SEO Optimisation",
+            "Responsive Web Design"
+        ],
+        "sameAs": [
+            "https://www.facebook.com/studiopro.my",
+            "https://www.instagram.com/prostudio.my/",
+            "https://x.com/studiopro_my"
+        ]
+    }
+    </script>
+</head>
+<body>
+
+    <!-- preloader -->
+    <div class="preloader" id="preloader" aria-hidden="true">
+        <canvas class="pl-rain" id="plRain" aria-hidden="true"></canvas>
+        <div class="pl-center">
+            <div class="pl-mark"><img src="assets/img/prostudio-logo.jpeg?v=1" alt="Studio Pro"></div>
+            <div class="pl-track"><div class="pl-bar" id="plBar"></div></H>
+            <div class="pl-label">Studio&nbsp;Pro</div>
+        </div>
+    </div>
+
+    <!-- scroll progress -->
+    <div class="scroll-progress" id="scrollbar" aria-hidden="true"></div>
+
+    <!-- custom cursor -->
+    <div class="cursor" id="cursor" aria-hidden="true"></div>
+    <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+    <!-- nav -->
+    <header class="nav" id="nav">
+        <a class="brand" href="#home">
+            <span class="brand-logo"><img src="assets/img/prostudio-logo.jpeg" alt="Studio Pro logo"></span>
+            <span class="brand-name">Studio<b>Pro</b></span>
+        </a>
+        <nav class="nav-links" id="navLinks" aria-label="Primary">
+            <a href="#home" class="active">Home</a>
+            <a href="#services">Services</a>
+            <a href="#story">About</a>
+            <a href="#work">Work</a>
+            <a href="#process">Process</a>
+            <a href="#stories">Clients</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <a href="#contact" class="btn btn-primary nav-cta magnetic">Start a Project</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="nav-overlay" id="navOverlay"></div>
+    </header>
+
+    <main id="top">
+
+        <!-- hero -->
+        <section class="hero" id="home">
+            <div class="hero-bg" aria-hidden="true">
+                <div class="orb orb-a" id="orbA"></div>
+                <div class="orb orb-b" id="orbB"></div>
+                <div class="grid-lines"></div>
+                <div class="noise"></div>
+            </div>
+
+            <div class="hero-inner" data-parallax-wrap>
+                <div class="hero-copy">
+                    <div class="kicker" data-reveal>
+                        <span class="kicker-dot"></span>
+                        Web Studio Based in Sabah
+                    </div>
+                    <h1 class="hero-title" data-reveal>
+                        Expert Web Design & SEO in Sabah:
+                        <span class="tx-rotate"><em class="tx-word" id="rotateWord">Digital Experiences</em></span>
+                    </h1>
+                    <p class="hero-sub" data-reveal>
+                        We pair clean, modern design with smart SEO to build websites that
+                        feel personal, look the part, and perform seamlessly — from wireframe to launch.
+                    </p>
+                    <div class="hero-actions" data-reveal>
+                        <a href="#contact" class="btn btn-primary magnetic">Start a Project
+                            <svg viewBox="0 0 24 24" class="btn-ico"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                        <a href="#work" class="btn btn-ghost magnetic">See Our Work</a>
+                    </div>
+                    <ul class="hero-ticks" data-reveal>
+                        <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>User-First Design</li>
+                        <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>SEO Optimized</li>
+                        <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Responsive Layouts</li>
+                    </ul>
+                </div>
+
+                <div class="hero-visual" data-reveal data-tilt id="heroVisual">
+                    <div class="browser">
+                        <div class="browser-bar">
+                            <span class="b-dot"></span><span class="b-dot"></span><span class="b-dot"></span>
+                            <span class="b-url">prostudio.my</span>
+                        </div>
+                        <div class="browser-body">
+                            <div class="b-nav"><i></i><i></i><i></i></div>
+                            <div class="b-hero">
+                                <div class="b-lines">
+                                    <span class="b-line w60"></span>
+                                    <span class="b-line w80"></span>
+                                    <span class="b-line w45"></span>
+                                </div>
+                                <span class="b-pill"></span>
+                            </div>
+                            <div class="b-grid">
+                                <span></span><span></span><span></span>
+                                <span></span><span></span><span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="float-chip chip-a" id="chipA">
+                        <svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 7h6v6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <div><b>25+</b><small>Projects launched</small></div>
+                    </div>
+                    <div class="float-chip chip-b" id="chipB">
+                        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm14 10v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <div><b>18+</b><small>Happy clients</small></div>
+                    </div>
+                    <div class="float-chip chip-c" id="chipC">
+                        <svg viewBox="0 0 24 24"><path d="M15 9l-6 6M9 9h.01M15 15h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <div><b>98%</b><small>Client satisfaction</small></div>
+                    </div>
+                </div>
+            </div>
+
+            <a class="scroll-cue" href="#services" aria-label="Scroll down" data-reveal>
+                <span class="cue-line"></span>
+            </a>
+
+            <div class="marquee" aria-hidden="true">
+                <div class="marquee-track" id="marqueeTrack">
+                    <span>Web Design</span><b>✦</b>
+                    <span>UX Wireframes</span><b>✦</b>
+                    <span>SEO Optimisation</span><b>✦</b>
+                    <span>Digital Experiences</span><b>✦</b>
+                    <span>User-First Design</span><b>✦</b>
+                    <span>Smart SEO</span><b>✦</b>
+                </div>
+            </div>
+        </section>
+
+        <!-- services -->
+        <section class="section" id="services">
+            <div class="wrap">
+                <div class="sec-head" data-reveal>
+                    <span class="kicker kicker-ink"><span class="kicker-dot"></span>Our Services</span>
+                    <h2 class="sec-title">Everything you need to <em>launch</em>, <em>rank</em> and <em>impress</em>.</h2>
+                    <p class="sec-sub">Crafting websites with style, speed, and seamless user journeys.</p>
+                </div>
+
+                <div class="bento">
+                    <article class="tile tile-lg" data-reveal data-tilt data-spot>
+                        <a href="services/web-design-sabah.html" style="display: contents; color: inherit;">
+                            <div class="tile-top">
+                                <span class="tile-icon" style="--ti:#3B4BF4">
+                                    <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M9 18l-2 3M15 18l-2 3M10 13h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                                </span>
+                                <span class="tile-num">01</span>
+                            </div>
+                            <h3>Web Design</h3>
+                            <p>Clean, modern website designs tailored for you. Beautiful, responsive sites that reflect your brand's personality and engage visitors.</p>
+                            <div class="mini mini-browser">
+                                <div class="mini-bar"><i></i><i></i><i></i><span>danisaquaculture.my</span></div>
+                                <div class="mini-shot"><img loading="lazy" decoding="async" src="assets/img/work-danis.jpg" alt="Live website screenshot — danisaquaculture.my"></div>
+                            </div>
+                        </a>
+
+                    <article class="tile" data-reveal data-tilt data-spot>
+                        <a href="services/ux-wireframes-sabah.html" style="display: contents; color: inherit;">
+                            <div class="tile-top">
+                                <span class="tile-icon" style="--ti:#7C46E8">
+                                    <svg viewBox="0 0 24 24"><rect x="4" y="3.5" width="16" height="17" rx="2"/><path d="M8 8h5M8 11h8M8 14h6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                                </span>
+                                <span class="tile-num">02</span>
+                            </div>
+                            <h3>UX Wireframes</h3>
+                            <p>Wireframes that map out user journeys clearly and guide visitors effortlessly through your site.</p>
+                            <div class="mini mini-wires">
+                                <div class="wf-top">
+                                    <span class="wf-logo"></span>
+                                    <span class="wf-nav"></span><span class="wf-nav"></span><span class="wf-nav"></span>
+                                    <span class="wf-nav wf-cta"></span>
+                                </div>
+                                <div class="wf-hero">
+                                    <div class="wf-copy">
+                                        <span class="wf-h"></span>
+                                        <span class="wf-h wf-h-short"></span>
+                                        <span class="wf-p"></span>
+                                        <span class="wf-p wf-p-short"></span>
+                                        <div class="wf-btns"><i class="wf-btn wf-btn-solid"></i><i class="wf-btn wf-btn-ghost"></i></div>
+                                    </div>
+                                    <div class="wf-media"><span>Image</span></div>
+                                </div>
+                                <div class="wf-cards"><i></i><i></i><i></i></div>
+                                <span class="wf-tag">Homepage — v03</span>
+                                <span class="wf-tag wf-tag-lo">Nav · Hero · Cards</span>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="tile" data-reveal data-tilt data-spot>
+                        <a href="services/seo-sabah.html" style="display: contents; color: inherit;">
+                            <div class="tile-top">
+                                <span class="tile-icon" style="--ti:#1067E0">
+                                    <svg viewBox="0 0 24 24"><path d="M3 20h18M6 16v-4M12 16V8M18 16v-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                                </span>
+                                <span class="tile-num">03</span>
+                            </div>
+                            <h3>SEO Optimisation</h3>
+                            <p>Smart SEO strategies that boost visibility, climb search rankings, and attract the right visitors.</p>
+                            <div class="mini mini-seo">
+                                <span class="seo-bar b1"></span><span class="seo-bar b2"></span>
+                                <span class="seo-bar b3"></span><span class="seo-bar b4"></span>
+                                <span class="seo-bar b5"></span><span class="seo-tag">↑ Rank</span>
+                            </div>
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- story / about -->
+        <section class="section section-alt" id="story">
+            <div class="wrap split">
+                <div class="story-copy" data-reveal>
+                    <span class="kicker kicker-ink"><span class="kicker-dot"></span>About Studio Pro</span>
+                    <h2 class="sec-title">Crafting <em>your</em> digital story.</h2>
+                    <p class="body-p">At Studio Pro, we blend sleek design and smart SEO to build websites that feel personal and perform seamlessly. From wireframes to launch, every detail is crafted with care, creativity, and a user-first focus.</p>
+                    <p class="body-p muted">From sleek UX wireframes to SEO tweaks, we craft every detail to ensure your site not only looks great but performs brilliantly.</p>
+                    <ul class="check-list">
+                        <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>User-First Design</li>
+                        <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>SEO Optimized</li>
+                        <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Responsive Layouts</li>
+                        <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Personal Approach</li>
+                    </ul>
+                </div>
+
+                <div class="story-panel" data-reveal data-delay="150">
+                    <div class="studio-card" data-tilt>
+                        <span class="sc-logo"><img src="assets/img/prostudio-logo.jpeg" alt=""></span>
+                        <h3>Studio&nbsp;Pro</h3>
+                        <p>Design · Wireframes · SEO — crafted with care, creativity and a user-first focus.</p>
+                    </div>
+                    <div class="stats">
+                        <div class="stat">
+                            <b class="stat-num" data-count="25" data-suffix="+">0</b>
+                            <small>Projects Completed</small>
+                        </div>
+                        <div class="stat">
+                            <b class="stat-num" data-count="18" data-suffix="+">0</b>
+                            <small>Happy Clients</small>
+                        </div>
+                        <div class="stat">
+                            <b class="stat-num" data-count="98" data-suffix="%">0</b>
+                            <small>Client Satisfaction</small>
+                        </div>
+                        <div class="stat">
+                            <b class="stat-num" data-count="3" data-suffix="">0</b>
+                            <small>Core Services</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- work -->
+        <section class="section" id="work">
+            <div class="wrap">
+                <div class="sec-head between" data-reveal>
+                    <div>
+                        <span class="kicker kicker-ink"><span class="kicker-dot"></span>Our Work</span>
+                        <h2 class="sec-title">Featured <em>work</em>.</h2>
+                        <p class="sec-sub">Real sites we've designed, built and ranked for our clients.</p>
+                    </div>
+                    <a href="#contact" class="btn btn-ghost magnetic">Get Started</a>
+                </div>
+
+                <div class="work-grid">
+                    <a class="pcard" href="https://sabahbuskers.my" target="_blank" rel="noopener" data-reveal data-tilt data-spot>
+                        <span class="pc-art"><img loading="lazy" decoding="async" src="assets/img/work-sabahbuskers.jpg" alt="sabahbuskers.my"></span>
+                        <span class="pc-tag">Community Platform</span>
+                        <h3>sabahbuskers.my</h3>
+                        <p>Voices of Kota Kinabalu — live shows, online gigs and community support keeping Sabah's streets alive with music. Trusted by 2,300+ members.</p>
+                        <span class="pc-arrow"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                    </a>
+                    <a class="pcard" href="https://apps.sabahbuskers.my" target="_blank" rel="noopener" data-reveal data-delay="120" data-tilt data-spot>
+                        <span class="pc-art"><img loading="lazy" decoding="async" src="assets/img/work-appsabahbuskers.jpg" alt="apps.sabahbuskers.my"></span>
+                        <span class="pc-tag">SBC Mobile Apps · Beta</span>
+                        <h3>apps.sabahbuskers.my</h3>
+                        <p>Platform connecting buskers with legal performance spots across Sabah — find slots, book weekly performances, and manage the community via the admin console.</p>
+                        <span class="pc-arrow"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                    </a>
+                    <a class="pcard" href="https://zzbeauty.my" target="_blank" rel="noopener" data-reveal data-tilt data-spot>
+                        <span class="pc-art"><img loading="lazy" decoding="async" src="assets/img/work-zzbeauty.jpg" alt="zzbeauty.my"></span>
+                        <span class="pc-tag">Beauty & Wellness</span>
+                        <h3>zzbeauty.my</h3>
+                        <p>ZZ Beauty & Wellness — your gateway to all things beauty and self-care. A warm, welcoming online presence for the studio.</p>
+                        <span class="pc-arrow"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                    </a>
+                    <a class="pcard" href="https://proartsolutions.my" target="_blank" rel="noopener" data-reveal data-tilt data-spot>
+                        <span class="pc-art"><img loading="lazy" decoding="async" src="assets/img/work-proart.jpg" alt="proartsolutions.my"></span>
+                        <span class="pc-tag">Creative Studio</span>
+                        <h3>proartsolutions.my</h3>
+                        <p>ProArt Solutions — custom illustrations and digital design crafted with precision and style. Portfolio, services and contact in one elegant site.</p>
+                        <span class="pc-arrow"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                    </a>
+                    <a class="pcard" href="https://www.danisaquaculture.my" target="_blank" rel="noopener" data-reveal data-delay="120" data-tilt data-spot>
+                        <span class="pc-art"><img loading="lazy" decoding="async" src="assets/img/work-danis.jpg" alt="danisaquaculture.my"></span>
+                        <span class="pc-tag">Online Marketplace</span>
+                        <h3>danisaquaculture.my</h3>
+                        <p>Danis Aquaculture — fresh seafood delivered daily from the ocean to your doorstep. An online market with live offers and daily shipping.</p>
+                        <span class="pc-arrow"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                    </a>
+                    <a class="pcard" href="#contact" data-reveal data-delay="240" data-tilt data-spot>
+                        <span class="pc-art pc-art-cta"><span class="pc-tag">Your project here</span></span>
+                        <span class="pc-tag">—</span>
+                        <h3>Let's build yours.</h3>
+                        <p>Have an idea? We craft websites with style, speed, and seamless user journeys.</p>
+                        <span class="pc-arrow"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- process -->
+        <section class="section section-dark" id="process">
+            <div class="wrap">
+                <div class="sec-head" data-reveal>
+                    <span class="kicker"><span class="kicker-dot"></span>How We Work</span>
+                    <h2 class="sec-title">A calm process, <em>clear results</em>.</h2>
+                    <p class="sec-sub">From first call to launch — a clear, collaborative path for every project.</p>
+                </div>
+
+                <div class="proc-grid">
+                    <article class="proc" data-reveal>
+                        <span class="proc-num">01</span>
+                        <span class="tile-icon" style="--ti:#5D7CFF"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m15.2 8.8-1.2 5.2-5.2 1.2 1.2-5.2Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+                        <h3>Discover &amp; Plan</h3>
+                        <p class="proc-p">We start by understanding your goals, audience and brand — then map the journey before we design.</p>
+                        <ul class="proc-list">
+                            <li><span>✓</span>Initial consultation on your goals</li>
+                            <li><span>✓</span>User-first wireframes &amp; blueprint</li>
+                            <li><span>✓</span>Clear scope, timeline and pricing</li>
+                        </ul>
+                        <a href="#contact" class="lnk magnetic">Get Started
+                            <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                    </article>
+                    <article class="proc" data-reveal data-delay="120">
+                        <span class="proc-num">02</span>
+                        <span class="tile-icon" style="--ti:#9B6BFF"><svg viewBox="0 0 24 24"><rect x="4" y="3.5" width="16" height="17" rx="2"/><path d="M8 8h5M8 11h8M8 14h6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+                        <h3>Design &amp; Build</h3>
+                        <p class="proc-p">We craft and build a site that looks sharp, loads fast and feels effortless on every device.</p>
+                        <ul class="proc-list">
+                            <li><span>✓</span>Clean, modern design for your brand</li>
+                            <li><span>✓</span>Beautiful, responsive layouts</li>
+                            <li><span>✓</span>Sleek animations &amp; smooth transitions</li>
+                        </ul>
+                        <a href="#contact" class="lnk magnetic">Get Started
+                            <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                    </article>
+                    <article class="proc" data-reveal data-delay="240">
+                        <span class="proc-num">03</span>
+                        <span class="tile-icon" style="--ti:#35A2FF"><svg viewBox="0 0 24 24"><path d="M3 20h18M6 16v-4M12 16V8M18 16v-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <h3>Launch &amp; Grow</h3>
+                        <p class="proc-p">We ship your site and keep sharpening its SEO so the right people keep finding you.</p>
+                        <ul class="proc-list">
+                            <li><span>✓</span>Content &amp; structure optimisation</li>
+                            <li><span>✓</span>Climb search engine rankings</li>
+                            <li><span>✓</span>Ongoing tweaks that boost visibility</li>
+                        </ul>
+                        <a href="#contact" class="lnk magnetic">Get Started
+                            <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- testimonials / stories -->
+        <section class="section" id="stories">
+            <div class="wrap narrow">
+                <div class="sec-head" data-reveal>
+                    <span class="kicker kicker-ink"><span class="kicker-dot"></span>Testimonials</span>
+                    <h2 class="sec-title">What clients <em>say</em>.</h2>
+                    <p class="sec-sub">Feedback from people who trusted Studio Pro.</p>
+                </div>
+
+                <div class="tgrid" data-reveal>
+                        <figure class="tcard">
+                            <div class="stars">★★★★★</div>
+                            <blockquote>Studio Pro transformed our website with sleek design and smooth navigation. The SEO boost was noticeable within weeks.</blockquote>
+                            <figcaption class="tperson"><span class="avatar" style="--av:#3B4BF4">K</span><span><b>Khayr Luqman</b><small>Terengganu</small></span></figcaption>
+                        </figure>
+                        <figure class="tcard">
+                            <div class="stars">★★★★★</div>
+                            <blockquote>Fresh ideas that truly connect. Our pages feel clear, modern and effortless — exactly the presence we needed.</blockquote>
+                            <figcaption class="tperson"><span class="avatar" style="--av:#7C46E8">M</span><span><b>Mia L.</b><small>Client</small></span></figcaption>
+                        </figure>
+                        <figure class="tcard">
+                            <div class="stars">★★★★★</div>
+                            <blockquote>Studio Pro transformed our website with sleek design and smooth navigation—our visitors love the fresh, engaging look!</blockquote>
+                            <figcaption class="tperson"><span class="avatar" style="--av:#1067E0">A</span><span><b>Anna B.</b><small>ProArt Solutions</small></span></figcaption>
+                        </figure>
+                        <figure class="tcard">
+                            <div class="stars">★★★★★</div>
+                            <blockquote>The wireframes and animations brought our ideas to life. Studio Pro's friendly approach made collaboration easy and fun.</blockquote>
+                            <figcaption class="tperson"><span class="avatar" style="--av:#E05A2B">A</span><span><b>Amy Lee Abdullah</b><small>Singapore</small></span></figcaption>
+                        </figure>
+                    </div>
+            </div>
+        </section>
+
+        <!-- contact -->
+        <section class="section section-contact" id="contact">
+            <div class="wrap">
+                <div class="sec-head center" data-reveal>
+                    <span class="kicker kicker-ink"><span class="kicker-dot"></span>Get in Touch</span>
+                    <h2 class="sec-title">Let's build something <em>great</em> together.</h2>
+                    <p class="sec-sub">Questions or ideas? We're here to listen. Reach out to Studio Pro for tailored website design and creative solutions.</p>
+                </div>
+
+                <div class="contact-grid" data-reveal>
+                    <div class="contact-info">
+                        <a class="c-chip" href="mailto:sales@prostudio.my" data-spot>
+                            <span class="c-ico"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                            <span><small>Email</small><b>sales@prostudio.my</b></span>
+                        </a>
+                        <a class="c-chip" href="tel:+60138699933" data-spot>
+                            <span class="c-ico"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                            <span><small>Phone / WhatsApp</small><b>+60&nbsp;13-869&nbsp;9933</b></span>
+                        </a>
+                        <div class="contact-socials">
+                            <p class="cs-label">Find us online</p>
+                            <div class="cs-row">
+                                <a href="https://www.facebook.com/studiopro.my" target="_blank" rel="noopener" class="s-chip magnetic" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8h3V4.5h-3A4.5 4.5 0 0 0 9.5 9v2H7v3.5h2.5V20h3.5v-5.5H16l.7-3.5h-3.2V9a1 1 0 0 1 1-1Z" fill="currentColor"/></svg></a>
+                                <a href="https://www.instagram.com/prostudio.my/" target="_blank" rel="noopener" class="s-chip magnetic" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="3.8" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17" cy="7" r="1.2" fill="currentColor"/></svg></a>
+                                <a href="https://x.com/studiopro_my" target="_blank" rel="noopener" class="s-chip magnetic" aria-label="X (Twitter)"><svg viewBox="0 0 24 24"><path d="M4 4l7.2 9.3L4.4 20h2.4l5.6-5.4 4.3 5.4H20l-7.5-9.7L18.8 4h-2.4l-5 4.9L7.6 4Z" fill="currentColor"/></svg></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form class="cform" id="contactForm" novalidate>
+                        <div class="field">
+                            <input type="text" id="fName" name="name" placeholder=" " required>
+                            <label for="fName">Your Name</label>
+                        </div>
+                        <div class="field">
+                            <input type="email" id="fEmail" name="email" placeholder=" " required>
+                            <label for="fEmail">Your Email</label>
+                        </div>
+                        <div class="field">
+                            <textarea id="fMsg" name="message" rows="5" placeholder=" " required></textarea>
+                            <label for="fMsg">Your Message</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block magnetic">Send Message
+                            <svg viewBox="0 0 24 24" class="btn-ico"><path d="M3 20 21 12 3 4v6l12 2-12 2Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></button>
+                        <p class="form-note" id="formNote">Thanks — your message is on its way. We'll get back to you shortly.</p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- footer -->
+    <footer class="footer" id="footer">
+        <div class="footer-cta">
+            <div class="wrap">
+                <span class="kicker"><span class="kicker-dot"></span>Ready When You Are</span>
+                <h2 class="ft-title">Let's craft your <em>digital story</em>.</h2>
+                <a href="#contact" class="btn btn-light magnetic">Start a Project
+                    <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+        </div>
+        <div class="footer-main">
+            <div class="wrap">
+                <div class="f-grid">
+                    <div class="f-brand">
+                        <span class="brand f-logo"><span class="brand-logo"><img src="assets/img/prostudio-logo.jpeg" alt=""></span><span class="brand-name">Studio<b>Pro</b></span></span>
+                        <p>Web design, UX wireframes and smart SEO — crafted with care, creativity and a user-first focus.</p>
+                        <div class="cs-row">
+                            <a href="https://www.facebook.com/studiopro.my" target="_blank" rel="noopener" class="s-chip magnetic" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8h3V4.5h-3A4.5 4.5 0 0 0 9.5 9v2H7v3.5h2.5V20h3.5v-5.5H16l.7-3.5h-3.2V9a1 1 0 0 1 1-1Z" fill="currentColor"/></svg></a>
+                            <a href="https://www.instagram.com/prostudio.my/" target="_blank" rel="noopener" class="s-chip magnetic" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="3.8" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17" cy="7" r="1.2" fill="currentColor"/></svg></a>
+                            <a href="https://x.com/studiopro_my" target="_blank" rel="noopener" class="s-chip magnetic" aria-label="X (Twitter)"><svg viewBox="0 0 24 24"><path d="M4 4l7.2 9.3L4.4 20h2.4l5.6-5.4 4.3 5.4H20l-7.5-9.7L18.8 4h-2.4l-5 4.9L7.6 4Z" fill="currentColor"/></svg></a>
+                        </div>
+                    </div>
+                    <div class="f-col">
+                        <h4>Explore</h4>
+                        <a href="#home">Home</a>
+                        <a href="#services">Services</a>
+                        <a href="#work">Work</a>
+                        <a href="#process">Process</a>
+                    </div>
+                    <div class="f-col">
+                        <h4>Company</h4>
+                        <a href="#story">About</a>
+                        <a href="#stories">Clients</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                    <div class="f-col">
+                        <h4>Reach Us</h4>
+                        <a href="mailto:sales@prostudio.my">sales@prostudio.my</a>
+                        <a href="tel:+60138699933">+60 13-869 9933</a>
+                    </div>
+                </div>
+                <div class="f-bottom">
+                    <p>© 2026 Studio Pro. All rights reserved. Crafted with passion.</p>
+                    <a href="#top" class="to-top magnetic" aria-label="Back to top">
+                        <svg viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js?v=4"></script>
+</body>
+</html>
