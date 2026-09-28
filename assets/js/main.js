@@ -7,7 +7,8 @@
 
     /* ---------- preloader ---------- */
     (function () {
-        var bar = $('#plBar'), done = false;
+        var bar = $('#plBar'), pre = $('#preloader'), done = false;
+        if (!bar || !pre) return; /* pages without a preloader (service pages) skip this block */
         var MIN_SHOW = 2400, begin = performance.now(), tick = 0, last = begin;
         function frame(now) {
             tick += Math.min(now - last, 90);
@@ -17,13 +18,13 @@
             var ease = 1 - Math.pow(1 - el, 2);
             bar.style.width = Math.round(ease * 100) + '%';
             if (!done && el < 1) requestAnimationFrame(frame);
-            else if (!done) { done = true; setTimeout(function () { $('#preloader').classList.add('done'); }, 350); }
+            else if (!done) { done = true; setTimeout(function () { pre.classList.add('done'); }, 350); }
         }
         window.addEventListener('load', function () {
             begin = tick;
             requestAnimationFrame(frame);
             setTimeout(function () {
-                if (!done) { done = true; $('#preloader').classList.add('done'); }
+                if (!done) { done = true; pre.classList.add('done'); }
             }, 5600);
         });
 
@@ -71,6 +72,7 @@
     if (window.matchMedia('(pointer: fine)').matches) {
         (function () {
             var ring = $('#cursor'), dot = $('#cursorDot');
+            if (!ring || !dot) return; /* no custom cursor markup on this page */
             var rx = innerWidth / 2, ry = innerHeight / 2, dx = rx, dy = ry;
             function move(e) { rx = e.clientX; ry = e.clientY; dot.style.opacity = 1; ring.style.opacity = 1; }
             function loop() {
@@ -221,8 +223,8 @@
         links.forEach(function (a) { map['#' + a.getAttribute('href').slice(1)] = a; });
         function onScroll() {
             var st = scrollY, h = document.documentElement.scrollHeight - innerHeight;
-            bar.style.width = (h > 0 ? (st / h) * 100 : 0) + '%';
-            nav.classList.toggle('scrolled', st > 12);
+            if (bar) bar.style.width = (h > 0 ? (st / h) * 100 : 0) + '%';
+            if (nav) nav.classList.toggle('scrolled', st > 12);
             var best = 'home', bestd = 1e9;
             Object.keys(map).forEach(function (id) {
                 var sec = document.querySelector(id);

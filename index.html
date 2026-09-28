@@ -25,7 +25,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css?v=5">
+    <link rel="stylesheet" href="assets/css/style.css?v=6">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -65,8 +65,45 @@
         ],
         "sameAs": [
             "https://www.facebook.com/studiopro.my",
-            "https://www.instagram.com/prostudio.my/",
-            "https://x.com/studiopro_my"
+            "https://www.instagram.com/prostudio.my/"
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How much does a website cost?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Websites including hosting and domain name start at as low as RM1,600.00. Anything bigger — more pages, SEO, 3D extras — is quoted clearly at the planning stage, so you approve a fixed price before we build. No hidden charges, no surprises at the end." }
+            },
+            {
+                "@type": "Question",
+                "name": "How long does a website take?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Most sites go live in 2–4 weeks from wireframe to launch, with your feedback at every step. Larger 3D builds take a little longer, and the schedule is confirmed with you before the work starts." }
+            },
+            {
+                "@type": "Question",
+                "name": "Do I need my content and logo ready first?",
+                "acceptedAnswer": { "@type": "Answer", "text": "No. You only need enough to describe what you offer. We map the structure and write a content outline for every page, then work with your logo, photos and text as they arrive. Prefer us to write it? Ask us to add copywriting to your project." }
+            },
+            {
+                "@type": "Question",
+                "name": "Will people find it on Google?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Yes — smart on-page SEO is part of the build: titles and headings, structured data, sitemaps submitted to Google and Search Console, analytics installed, then a monthly roadmap of new pages, content and local signals that keeps rankings climbing." }
+            },
+            {
+                "@type": "Question",
+                "name": "Will it be fast and work on phones?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Every site is responsive by default and tuned for speed while we design — compressed images, lazy loading, clean code and caching. We test across browsers and devices before launch, so it feels as quick on a phone as it does on a desktop." }
+            },
+            {
+                "@type": "Question",
+                "name": "Who owns the website when it's done?",
+                "acceptedAnswer": { "@type": "Answer", "text": "You do. Design files, source code, content and every login belong to you — nothing is locked to us. You also get a recorded training session and a written guide so your team can make everyday changes without calling a developer." }
+            }
         ]
     }
     </script>
@@ -478,6 +515,49 @@
             </div>
         </section>
 
+        <!-- faq -->
+        <section class="section section-alt" id="faq">
+            <div class="wrap narrow">
+                <div class="sec-head" data-reveal>
+                    <span class="kicker kicker-ink"><span class="kicker-dot"></span>FAQ</span>
+                    <h2 class="sec-title">Questions, <em>answered</em>.</h2>
+                    <p class="sec-sub">What clients usually ask before starting — including what a website costs.</p>
+                </div>
+
+                <div class="faq" data-reveal>
+                    <details open>
+                        <summary>How much does a website cost?</summary>
+                        <div class="a">Websites including hosting and domain name start at as low as <span class="price">RM1,600.00</span>. Anything bigger — more pages, SEO, 3D extras — is quoted clearly at the planning stage, so you approve a fixed price before we build. No hidden charges, no surprises at the end.</div>
+                    </details>
+
+                    <details>
+                        <summary>How long does a website take?</summary>
+                        <div class="a">Most sites go live in <b>2–4 weeks</b> from wireframe to launch, with your feedback at every step. Larger 3D builds take a little longer, and the schedule is confirmed with you before the work starts.</div>
+                    </details>
+
+                    <details>
+                        <summary>Do I need my content and logo ready first?</summary>
+                        <div class="a">No. You only need enough to describe what you offer. We map the structure and write a <b>content outline for every page</b>, then work with your logo, photos and text as they arrive. Prefer us to write it? Ask us to add copywriting to your project.</div>
+                    </details>
+
+                    <details>
+                        <summary>Will people find it on Google?</summary>
+                        <div class="a">Yes — smart on-page SEO is part of the build: titles and headings, structured data, sitemaps submitted to Google and Search Console, analytics installed, then a monthly roadmap of new pages, content and local signals that keeps rankings climbing.</div>
+                    </details>
+
+                    <details>
+                        <summary>Will it be fast and work on phones?</summary>
+                        <div class="a">Every site is <b>responsive by default</b> and tuned for speed while we design — compressed images, lazy loading, clean code and caching. We test across browsers and devices before launch, so it feels as quick on a phone as it does on a desktop.</div>
+                    </details>
+
+                    <details>
+                        <summary>Who owns the website when it's done?</summary>
+                        <div class="a"><b>You do.</b> Design files, source code, content and every login belong to you — nothing is locked to us. You also get a recorded training session and a written guide so your team can make everyday changes without calling a developer.</div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
         <!-- contact -->
         <section class="section section-contact" id="contact">
             <div class="wrap">
@@ -506,7 +586,6 @@
                             <div class="cs-row">
                                 <a href="https://www.facebook.com/studiopro.my" target="_blank" rel="noopener" class="s-chip magnetic" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8h3V4.5h-3A4.5 4.5 0 0 0 9.5 9v2H7v3.5h2.5V20h3.5v-5.5H16l.7-3.5h-3.2V9a1 1 0 0 1 1-1Z" fill="currentColor"/></svg></a>
                                 <a href="https://www.instagram.com/prostudio.my/" target="_blank" rel="noopener" class="s-chip magnetic" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="3.8" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17" cy="7" r="1.2" fill="currentColor"/></svg></a>
-                                <a href="https://x.com/studiopro_my" target="_blank" rel="noopener" class="s-chip magnetic" aria-label="X (Twitter)"><svg viewBox="0 0 24 24"><path d="M4 4l7.2 9.3L4.4 20h2.4l5.6-5.4 4.3 5.4H20l-7.5-9.7L18.8 4h-2.4l-5 4.9L7.6 4Z" fill="currentColor"/></svg></a>
                             </div>
                         </div>
                     </div>
@@ -552,7 +631,6 @@
                         <div class="cs-row">
                             <a href="https://www.facebook.com/studiopro.my" target="_blank" rel="noopener" class="s-chip magnetic" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8h3V4.5h-3A4.5 4.5 0 0 0 9.5 9v2H7v3.5h2.5V20h3.5v-5.5H16l.7-3.5h-3.2V9a1 1 0 0 1 1-1Z" fill="currentColor"/></svg></a>
                             <a href="https://www.instagram.com/prostudio.my/" target="_blank" rel="noopener" class="s-chip magnetic" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="3.8" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17" cy="7" r="1.2" fill="currentColor"/></svg></a>
-                            <a href="https://x.com/studiopro_my" target="_blank" rel="noopener" class="s-chip magnetic" aria-label="X (Twitter)"><svg viewBox="0 0 24 24"><path d="M4 4l7.2 9.3L4.4 20h2.4l5.6-5.4 4.3 5.4H20l-7.5-9.7L18.8 4h-2.4l-5 4.9L7.6 4Z" fill="currentColor"/></svg></a>
                         </div>
                     </div>
                     <div class="f-col">
@@ -584,7 +662,7 @@
         </div>
     </footer>
 
-    <script src="assets/js/main.js?v=4"></script>
+    <script src="assets/js/main.js?v=5"></script>
 
     <!--============ AI CHAT WIDGET (floating, lazy iframe) ============-->
     <style>

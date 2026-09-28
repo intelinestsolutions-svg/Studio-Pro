@@ -546,6 +546,34 @@ main { display: block; }
 .tperson b { display: block; font-weight: 700; font-size: 14.5px; }
 .tperson small { color: var(--faint); font-weight: 600; font-size: 12.5px; }
 
+/* ---------- faq ---------- */
+.faq { display: grid; gap: 12px; margin-top: 44px; }
+.faq details {
+    background: var(--paper); border: 1px solid var(--line); border-radius: var(--r-md);
+    padding: 0 24px; transition: border-color .25s ease, box-shadow .25s ease;
+}
+.faq details[open] { border-color: rgba(59, 75, 244, .34); box-shadow: var(--shadow-sm); }
+.faq summary {
+    list-style: none; cursor: pointer; position: relative;
+    padding: 20px 40px 20px 0;
+    font-family: var(--f-display); font-weight: 600; font-size: 16.5px; line-height: 1.45; color: var(--ink);
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::before,
+.faq summary::after {
+    content: ""; position: absolute; right: 2px; top: 50%; background: var(--acc); border-radius: 2px;
+    transition: transform .25s ease, opacity .25s ease;
+}
+.faq summary::before { width: 15px; height: 2px; transform: translateY(-50%); }
+.faq summary::after  { width: 2px; height: 15px; right: 8.5px; transform: translateY(-50%); }
+.faq details[open] summary::after { transform: translateY(-50%) rotate(90deg); opacity: 0; }
+.faq summary:focus-visible { outline: 2px solid var(--acc); outline-offset: 3px; border-radius: 6px; }
+.faq .a {
+    padding: 0 40px 21px 0; color: var(--soft); font-size: 15.5px; line-height: 1.75;
+}
+.faq .a b, .faq .a strong { color: var(--ink); font-weight: 700; }
+.faq .price { color: var(--acc); font-weight: 700; font-family: var(--f-display); }
+
 /* ---------- contact ---------- */
 .section-contact { background: var(--surface); border-top: 1px solid var(--line); }
 .contact-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(28px, 4vw, 56px); align-items: stretch; }
