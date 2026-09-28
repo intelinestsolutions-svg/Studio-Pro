@@ -82,7 +82,10 @@ async function run(expression) {
     awaitPromise: true,
     returnByValue: true,
   });
-  if (r.exceptionDetails) throw new Error(r.exceptionDetails.text || 'page expression threw');
+  if (r.exceptionDetails) {
+    const d = r.exceptionDetails;
+    throw new Error(d.exception?.description || d.text || 'page expression threw');
+  }
   return r.result.value;
 }
 
@@ -148,8 +151,24 @@ async function main() {
     deviceScaleFactor: 1,
     mobile: false,
   });
-  await send('Page.navigate', { url: URL_ });
-  await sleep(3500);
+  const nav = await send('Page.navigate', { url: URL_ });
+  console.log('navigate:', JSON.stringify(nav));
+  /* wait for the app itself, not the wire — a cold CDN edge can serve the
+     HTML long before the module graph has attached its listeners, and a
+     wheel dispatched into that gap silently does nothing. */
+  let ready = false;
+  for (let i = 0; i < 60 && !ready; i++) {
+    const state = JSON.parse(
+      (await run(
+        `JSON.stringify({rs: document.readyState, href: location.href, title: document.title, nav: document.querySelectorAll('.nav button').length, canvas: !!document.querySelector('canvas'), phase: (document.body && document.body.dataset.phase) || null, txt: (document.body ? document.body.innerText : '').replace(/\\s+/g,' ').slice(0,160)})`
+      )) || '{}'
+    );
+    if (i % 6 === 0) console.log('  poll:', JSON.stringify(state));
+    ready = state.rs === 'complete' && state.nav > 0 && state.canvas;
+    if (!ready) await sleep(500);
+  }
+  if (!ready) throw new Error('page never became interactive');
+  await sleep(1500);
 
   /* 1 · the wheel must chain out of a content panel — the walk is the
         only scroll container on the page, and a panel over it that eats
