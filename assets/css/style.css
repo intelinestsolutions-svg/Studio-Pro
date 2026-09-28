@@ -522,6 +522,8 @@ main { display: block; }
 .lnk svg { width: 17px; height: 17px; transition: transform .3s; }
 .lnk:hover { color: #fff; }
 .lnk:hover svg { transform: translateX(5px); }
+.lnk.dim { color: rgba(255,255,255,.5); margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--dark-line); }
+.lnk.dim:hover { color: #fff; }
 
 /* ---------- testimonials ---------- */
 .tgrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
@@ -611,6 +613,7 @@ main { display: block; }
 .f-logo { margin-bottom: 16px; }
 .f-brand p { color: rgba(255,255,255,.55); font-size: 14.5px; max-width: 36ch; margin-bottom: 20px; }
 .f-col h4 { font-family: var(--f-display); font-weight: 600; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.4); margin-bottom: 16px; }
+.footer .brand-name b { color: #7E8CFF; } /* lighter accent so "Pro" is readable on the dark footer */
 .f-col a { display: block; color: rgba(255,255,255,.82); font-size: 15px; padding: 5px 0; transition: color .2s, transform .2s; }
 .f-col a:hover { color: #fff; transform: translateX(3px); }
 .f-bottom {
