@@ -1,0 +1,10 @@
+# Old multi-page URLs collapse into the single-page experience.
+# 301, so the search equity of /about, /services and /contact is kept.
+/about    /    301
+/services /    301
+/contact  /    301
+/index.html /  301
+
+# www → apex. Netlify accepts host rules; on Cloudflare Pages set the same
+# thing as a Redirect Rule at the DNS level (this file only matches paths).
+# https://www.prostudio.my/* https://prostudio.my/:splat 301

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>og-image source — Blueprint (Concept A)</title>
+    <style>
+      @font-face {
+        font-family: 'Fraunces';
+        font-style: normal;
+        font-weight: 300 700;
+        src: url('file:///Users/happymarwan/studiopro-site/src/fonts/fraunces-normal.woff2') format('woff2');
+      }
+      @font-face {
+        font-family: 'Fraunces';
+        font-style: italic;
+        font-weight: 300 700;
+        src: url('file:///Users/happymarwan/studiopro-site/src/fonts/fraunces-italic.woff2') format('woff2');
+      }
+      @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 300 700;
+        src: url('file:///Users/happymarwan/studiopro-site/src/fonts/inter-normal.woff2') format('woff2');
+      }
+      @font-face {
+        font-family: 'IBM Plex Mono';
+        font-style: normal;
+        font-weight: 500;
+        src: url('file:///Users/happymarwan/studiopro-site/src/fonts/ibm-plex-mono-500.woff2') format('woff2');
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1200px;
+        height: 630px;
+        overflow: hidden;
+      }
+      body {
+        position: relative;
+        background:
+          radial-gradient(72% 66% at 92% 4%, rgba(79, 158, 255, 0.36) 0%, rgba(79, 158, 255, 0) 66%),
+          radial-gradient(110% 70% at 46% 118%, rgba(47, 111, 208, 0.3) 0%, rgba(47, 111, 208, 0) 64%),
+          linear-gradient(158deg, #071024 0%, #060a14 52%, #04070f 100%);
+        color: #f6f9ff;
+        font: 400 26px/1.6 'Inter', system-ui, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        display: flex;
+        align-items: center;
+        padding: 0 78px;
+      }
+
+      .stars {
+        position: absolute;
+        inset: 0;
+        background-image:
+          radial-gradient(2px 2px at 12% 18%, #fff 50%, transparent 51%),
+          radial-gradient(1.6px 1.6px at 27% 9%, #cfe3ff 50%, transparent 51%),
+          radial-gradient(2.4px 2.4px at 44% 22%, #fff 50%, transparent 51%),
+          radial-gradient(1.6px 1.6px at 61% 12%, #b9d4ff 50%, transparent 51%),
+          radial-gradient(2px 2px at 73% 26%, #fff 50%, transparent 51%),
+          radial-gradient(2.4px 2.4px at 88% 15%, #dceaff 50%, transparent 51%),
+          radial-gradient(1.6px 1.6px at 95% 31%, #fff 50%, transparent 51%),
+          radial-gradient(2px 2px at 6% 42%, #fff 50%, transparent 51%),
+          radial-gradient(1.6px 1.6px at 36% 47%, #cfe3ff 50%, transparent 51%),
+          radial-gradient(2px 2px at 79% 52%, #fff 50%, transparent 51%);
+        -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 55%, transparent 88%);
+        mask-image: linear-gradient(180deg, #000 0%, #000 55%, transparent 88%);
+      }
+
+      /* the floor grid — WebGL normally draws it, the share card has to draw
+         its own: perspective lines converging toward the horizon */
+      .grid {
+        position: absolute;
+        left: -25%;
+        right: -25%;
+        bottom: -4%;
+        height: 58%;
+        background-image:
+          repeating-linear-gradient(90deg, rgba(95, 178, 255, 0.36) 0 1.5px, transparent 1.5px 74px),
+          repeating-linear-gradient(0deg, rgba(95, 178, 255, 0.28) 0 1.5px, transparent 1.5px 74px);
+        transform: perspective(560px) rotateX(66deg);
+        transform-origin: 50% 100%;
+        -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 30%, #000 78%, transparent 100%);
+        mask-image: linear-gradient(180deg, transparent 0%, #000 30%, #000 78%, transparent 100%);
+      }
+
+      .row {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 56px;
+        width: 100%;
+      }
+
+      .logo {
+        width: 250px;
+        height: 250px;
+        border-radius: 58px;
+        background: #000;
+        border: 1px solid rgba(95, 178, 255, 0.4);
+        box-shadow: 0 30px 70px -34px rgba(47, 111, 208, 0.9);
+        flex: none;
+      }
+
+      .kicker {
+        margin: 0 0 18px;
+        font: 500 17px/1.4 'IBM Plex Mono', monospace;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: #ffc800;
+      }
+
+      h1 {
+        margin: 0;
+        font: 700 70px/1.06 'Fraunces', Georgia, serif;
+        letter-spacing: -0.02em;
+        text-wrap: balance;
+        max-width: 15ch;
+      }
+      h1 em {
+        font-style: italic;
+        color: #ffc800;
+      }
+
+      .sub {
+        margin: 22px 0 0;
+        max-width: 30ch;
+        font-size: 24px;
+        line-height: 1.55;
+        color: rgba(246, 249, 255, 0.86);
+      }
+
+      .domain {
+        position: absolute;
+        left: 78px;
+        bottom: 38px;
+        font: 500 21px/1 'IBM Plex Mono', monospace;
+        letter-spacing: 0.14em;
+        color: rgba(246, 249, 255, 0.75);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="stars"></div>
+    <div class="grid"></div>
+
+    <div class="row">
+      <img
+        class="logo"
+        src="file:///Users/happymarwan/studiopro-site/public/favicon.png"
+        alt="Studio Pro"
+        width="250"
+        height="250"
+      />
+      <div>
+        <p class="kicker">Kota Kinabalu · Sabah</p>
+        <h1>Crafting professional websites that <em>work.</em></h1>
+        <p class="sub">Fixed price. One point of contact. Support that doesn't stop at go-live.</p>
+      </div>
+    </div>
+
+    <div class="domain">prostudio.my</div>
+  </body>
+</html>

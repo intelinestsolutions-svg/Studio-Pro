@@ -1,0 +1,17 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Old multi-page URLs → the single-page experience (keep the equity).
+  RewriteRule ^about/?$   / [R=301,L]
+  RewriteRule ^services/?$ / [R=301,L]
+  RewriteRule ^contact/?$ /  [R=301,L]
+
+  # Canonical host + HTTPS (apex — matches the canonical in the head).
+  RewriteCond %{HTTPS} !=on
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+  RewriteCond %{HTTP_HOST} ^www\.prostudio\.my [NC]
+  RewriteRule ^(.*)$ https://prostudio.my/$1 [R=301,L]
+
+  # Single entry point.
+  RewriteRule ^index\.html$ / [R=301,L]
+</IfModule>

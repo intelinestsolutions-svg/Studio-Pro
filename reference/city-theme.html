@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>City — concept mockup</title>
+<style>
+  @font-face{font-family:'Space Grotesk';font-style:normal;font-weight:300 700;
+    src:url('file:///Users/happymarwan/studiopro-site/src/fonts/space-grotesk-var.woff2') format('woff2');}
+  @font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:500;
+    src:url('file:///Users/happymarwan/studiopro-site/src/fonts/ibm-plex-mono-500.woff2') format('woff2');}
+
+  :root{
+    --bg:#060911;
+    --ink:#f4f7ff;
+    --soft:rgba(244,247,255,.88);
+    --faint:rgba(244,247,255,.66);
+    --violet:#8b5cf6;
+    --violet-hot:#a78bfa;
+    --amber:#ffb054;
+    --cyan:#4fd6e0;
+    --line:rgba(139,92,246,.28);
+    --glass:rgba(12,16,32,.72);
+    --sans:'Space Grotesk',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+    --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 var(--sans);
+    -webkit-font-smoothing:antialiased}
+
+  /* ── night sky over the city ───────────────────────────── */
+  .sky{position:fixed;inset:0;z-index:0;
+    background:
+      radial-gradient(120% 60% at 50% 100%, rgba(255,176,84,.20) 0%, rgba(255,176,84,0) 55%),
+      radial-gradient(90% 55% at 18% 88%, rgba(139,92,246,.30) 0%, rgba(139,92,246,0) 60%),
+      radial-gradient(70% 50% at 82% 78%, rgba(79,214,224,.14) 0%, rgba(79,214,224,0) 60%),
+      linear-gradient(180deg,#04060d 0%,#070b18 38%,#0b1124 72%,#101733 100%);}
+
+  .stars{position:fixed;inset:0;z-index:1;opacity:1;
+    background-image:
+      radial-gradient(1.6px 1.6px at 12% 14%, #fff 50%, transparent 51%),
+      radial-gradient(1.4px 1.4px at 27% 7%, #cfe3ff 50%, transparent 51%),
+      radial-gradient(2px 2px at 41% 19%, #fff 50%, transparent 51%),
+      radial-gradient(1.4px 1.4px at 58% 10%, #b9d4ff 50%, transparent 51%),
+      radial-gradient(1.5px 1.5px at 69% 22%, #fff 50%, transparent 51%),
+      radial-gradient(2px 2px at 84% 12%, #ffe9c9 50%, transparent 51%),
+      radial-gradient(1.4px 1.4px at 92% 26%, #fff 50%, transparent 51%),
+      radial-gradient(1.5px 1.5px at 6% 30%, #fff 50%, transparent 51%),
+      radial-gradient(1.4px 1.4px at 34% 33%, #cfe3ff 50%, transparent 51%),
+      radial-gradient(1.5px 1.5px at 76% 36%, #fff 50%, transparent 51%),
+      radial-gradient(1.4px 1.4px at 49% 27%, #ffe9c9 50%, transparent 51%),
+      radial-gradient(1.6px 1.6px at 21% 44%, #fff 50%, transparent 51%),
+      radial-gradient(1.4px 1.4px at 88% 47%, #cfe3ff 50%, transparent 51%);}
+
+  /* skyline sits behind the hero card, on the first screen; it fades out
+     at the bottom so it doesn't cut a hard line across the page */
+  .skyline{position:absolute;left:0;right:0;top:470px;height:660px;z-index:2;
+    background:linear-gradient(180deg,transparent 52%,rgba(255,176,84,.20) 100%);
+    -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 74%,transparent 100%);
+    mask-image:linear-gradient(180deg,#000 0%,#000 74%,transparent 100%)}
+
+  /* ── chrome ─────────────────────────────────────────────── */
+  header{position:relative;z-index:5;display:flex;align-items:center;gap:24px;
+    padding:22px 40px}
+  .brand{display:flex;align-items:center;gap:12px;font:600 17px/1 var(--sans);
+    letter-spacing:.14em;text-transform:uppercase}
+  .mark{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;
+    background:linear-gradient(140deg,#8b5cf6,#e05bd8);color:#0a0713;
+    font:700 15px/1 var(--sans);letter-spacing:0;box-shadow:0 6px 22px rgba(139,92,246,.45)}
+  nav{margin:0 auto;display:flex;gap:4px;padding:6px;border-radius:999px;
+    background:rgba(10,13,26,.7);border:1px solid rgba(139,92,246,.30);
+    backdrop-filter:blur(14px)}
+  nav a{padding:9px 17px;border-radius:999px;font:500 14px/1 var(--sans);
+    color:var(--faint);text-decoration:none}
+  nav a.on{background:linear-gradient(140deg,#8b5cf6,#a78bfa);color:#0a0713;font-weight:600}
+  .chapter{display:flex;align-items:center;gap:9px;padding:10px 17px;border-radius:999px;
+    background:rgba(10,13,26,.7);border:1px solid rgba(139,92,246,.30);
+    font:500 13px/1 var(--mono);letter-spacing:.14em;color:var(--soft);backdrop-filter:blur(14px)}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--amber);
+    box-shadow:0 0 10px rgba(255,176,84,.9)}
+
+  /* ── hero card ──────────────────────────────────────────── */
+  .screen{position:relative;z-index:4;min-height:900px;display:grid;place-items:center;
+    padding:40px}
+  .card{position:relative;width:min(940px,100%);padding:52px 56px 44px;border-radius:28px;
+    background:linear-gradient(180deg,rgba(14,18,36,.80),rgba(8,11,24,.88));
+    border:1px solid rgba(167,139,250,.26);
+    box-shadow:0 40px 90px -30px rgba(0,0,0,.9), inset 0 1px 0 rgba(255,255,255,.06);
+    backdrop-filter:blur(18px);text-align:center;overflow:hidden}
+  .card::before{content:'';position:absolute;inset:0;pointer-events:none;
+    background:radial-gradient(80% 60% at 50% -10%, rgba(139,92,246,.20), transparent 70%)}
+
+  .kicker{position:relative;display:flex;align-items:center;gap:12px;margin:0 0 22px;
+    font:500 13px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;
+    color:var(--violet-hot);justify-content:center}
+  .kicker::before,.kicker::after{content:'';flex:1;max-width:120px;height:1px;
+    background:linear-gradient(90deg,transparent,rgba(167,139,250,.55))}
+  .kicker::after{background:linear-gradient(90deg,rgba(167,139,250,.55),transparent)}
+  .kicker b{color:var(--faint);font-weight:500}
+
+  h1{position:relative;margin:0;font:700 clamp(40px,5vw,64px)/1.08 var(--sans);
+    letter-spacing:-.025em;text-wrap:balance}
+  h1 em{font-style:normal;color:var(--amber)}
+  .lede{position:relative;margin:24px auto 0;max-width:60ch;font-size:20px;line-height:1.7;
+    color:var(--soft)}
+  .actions{position:relative;display:flex;gap:14px;justify-content:center;margin-top:34px}
+  .btn{padding:16px 30px;border-radius:999px;border:1px solid transparent;font:600 15px/1 var(--sans);
+    letter-spacing:.02em;cursor:pointer}
+  .btn--solid{background:linear-gradient(140deg,#8b5cf6,#c05bd8);color:#0a0713;
+    box-shadow:0 14px 34px -12px rgba(139,92,246,.85)}
+  .btn--ghost{background:rgba(255,255,255,.05);border-color:rgba(167,139,250,.42);color:var(--ink)}
+
+  .strip{position:relative;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;
+    margin-top:36px;padding-top:26px;border-top:1px solid rgba(139,92,246,.22);
+    font:500 13px/1 var(--mono);letter-spacing:.1em;color:var(--faint)}
+  .strip span{padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.045);
+    border:1px solid rgba(255,255,255,.07)}
+
+  /* ── work chapter ───────────────────────────────────────── */
+  .chapter2{position:relative;z-index:4;display:grid;place-items:center;padding:20px 40px 90px}
+  .sheet{width:min(1160px,100%);padding:46px 48px 48px;border-radius:28px;
+    background:linear-gradient(180deg,rgba(14,18,36,.86),rgba(8,11,24,.92));
+    border:1px solid rgba(167,139,250,.24);
+    box-shadow:0 40px 90px -30px rgba(0,0,0,.9), inset 0 1px 0 rgba(255,255,255,.06);
+    backdrop-filter:blur(18px)}
+  h2{margin:0 0 14px;font:700 clamp(26px,3vw,36px)/1.2 var(--sans);letter-spacing:-.018em;
+    text-wrap:balance}
+  .body{margin:0 0 30px;max-width:64ch;font-size:17px;line-height:1.7;color:var(--soft)}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .tile{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;overflow:hidden}
+  .tile img{display:block;width:100%;height:190px;object-fit:cover;object-position:top}
+  .tile div{padding:14px 16px 16px}
+  .tile h3{margin:0 0 4px;font:600 16px/1.3 var(--sans)}
+  .tile a{font:400 14px/1.4 var(--sans);color:var(--violet-hot);text-decoration:none}
+</style>
+</head>
+<body>
+  <div class="sky"></div>
+  <div class="stars"></div>
+
+  <svg class="skyline" viewBox="0 0 1440 420" preserveAspectRatio="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="far" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#1b2449"/><stop offset="1" stop-color="#0e1430"/>
+      </linearGradient>
+      <linearGradient id="near" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#101737"/><stop offset="1" stop-color="#05070f"/>
+      </linearGradient>
+    </defs>
+    <!-- far row -->
+    <g fill="url(#far)" opacity=".85">
+      <rect x="0" y="200" width="70" height="220"/><rect x="78" y="150" width="54" height="270"/>
+      <rect x="140" y="230" width="86" height="190"/><rect x="234" y="120" width="62" height="300"/>
+      <rect x="304" y="190" width="48" height="230"/><rect x="360" y="90" width="72" height="330"/>
+      <rect x="440" y="210" width="60" height="210"/><rect x="508" y="160" width="84" height="260"/>
+      <rect x="600" y="230" width="52" height="190"/><rect x="660" y="130" width="70" height="290"/>
+      <rect x="738" y="200" width="58" height="220"/><rect x="804" y="100" width="76" height="320"/>
+      <rect x="888" y="220" width="50" height="200"/><rect x="946" y="170" width="88" height="250"/>
+      <rect x="1042" y="240" width="56" height="180"/><rect x="1106" y="140" width="68" height="280"/>
+      <rect x="1182" y="205" width="54" height="215"/><rect x="1244" y="120" width="80" height="300"/>
+      <rect x="1332" y="195" width="108" height="225"/>
+    </g>
+    <!-- near row -->
+    <g fill="url(#near)">
+      <rect x="20" y="270" width="96" height="150"/><rect x="126" y="240" width="74" height="180"/>
+      <rect x="210" y="300" width="110" height="120"/><rect x="330" y="215" width="82" height="205"/>
+      <rect x="422" y="285" width="96" height="135"/><rect x="528" y="250" width="70" height="170"/>
+      <rect x="608" y="305" width="118" height="115"/><rect x="736" y="235" width="86" height="185"/>
+      <rect x="832" y="290" width="74" height="130"/><rect x="916" y="255" width="104" height="165"/>
+      <rect x="1030" y="300" width="88" height="120"/><rect x="1128" y="245" width="76" height="175"/>
+      <rect x="1214" y="285" width="112" height="135"/><rect x="1336" y="265" width="104" height="155"/>
+    </g>
+    <!-- lit windows -->
+    <g fill="#ffb054" opacity=".85">
+      <rect x="352" y="130" width="9" height="13"/><rect x="372" y="130" width="9" height="13"/>
+      <rect x="392" y="165" width="9" height="13"/><rect x="352" y="200" width="9" height="13"/>
+      <rect x="826" y="140" width="9" height="13"/><rect x="846" y="175" width="9" height="13"/>
+      <rect x="826" y="210" width="9" height="13"/><rect x="866" y="140" width="9" height="13"/>
+      <rect x="1266" y="160" width="9" height="13"/><rect x="1296" y="195" width="9" height="13"/>
+      <rect x="1266" y="230" width="9" height="13"/>
+      <rect x="254" y="160" width="9" height="13"/><rect x="274" y="200" width="9" height="13"/>
+      <rect x="254" y="240" width="9" height="13"/>
+      <rect x="686" y="175" width="9" height="13"/><rect x="706" y="215" width="9" height="13"/>
+      <rect x="96" y="190" width="9" height="13"/><rect x="116" y="230" width="9" height="13"/>
+      <rect x="470" y="250" width="9" height="13"/><rect x="1150" y="285" width="9" height="13"/>
+    </g>
+    <g fill="#4fd6e0" opacity=".7">
+      <rect x="392" y="245" width="9" height="13"/><rect x="866" y="215" width="9" height="13"/>
+      <rect x="1316" y="160" width="9" height="13"/><rect x="136" y="280" width="9" height="13"/>
+      <rect x="760" y="275" width="9" height="13"/>
+    </g>
+    <!-- neon sign -->
+    <g>
+      <rect x="1040" y="330" width="86" height="26" rx="6" fill="rgba(224,91,216,.16)"
+            stroke="#e05bd8" stroke-width="2"/>
+      <text x="1083" y="348" fill="#e05bd8" font-family="monospace" font-size="13"
+            text-anchor="middle" letter-spacing="2">KK</text>
+    </g>
+  </svg>
+
+  <header>
+    <div class="brand"><span class="mark">SP</span>Studio Pro</div>
+    <nav>
+      <a class="on" href="#">01 Start</a><a href="#">02 Work</a><a href="#">03 About</a>
+      <a href="#">04 Process</a><a href="#">05 Services</a><a href="#">06 Contact</a>
+    </nav>
+    <div class="chapter"><span class="dot"></span>01 // START</div>
+  </header>
+
+  <section class="screen">
+    <div class="card">
+      <p class="kicker"><b>01</b> Web Design · Kota Kinabalu, Sabah</p>
+      <h1>Crafting Professional<br>Websites That <em>Work</em></h1>
+      <p class="lede">We design, build and look after fast, search-ready websites — so your
+        business looks credible on every screen and turns visitors into enquiries.</p>
+      <div class="actions">
+        <button class="btn btn--solid">View Our Work</button>
+        <button class="btn btn--ghost">Start a Project</button>
+      </div>
+      <div class="strip">
+        <span>KOTA KINABALU 5.9804°N 116.0735°E</span>
+        <span>DESIGN · BUILD · SEO</span>
+        <span>FIXED SCOPE, FIXED PRICE</span>
+        <span>SUPPORT AFTER LAUNCH</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="chapter2">
+    <div class="sheet">
+      <p class="kicker" style="justify-content:flex-start"><b>02</b> Our Work</p>
+      <h2>Snapshots of websites crafted with care and skill.</h2>
+      <p class="body">Six live builds, each one designed, coded and launched by Studio Pro.
+        Open any of them — they are all running today.</p>
+      <div class="grid">
+        <article class="tile">
+          <img src="file:///Users/happymarwan/studiopro-site/public/work/danis.png" alt="">
+          <div><h3>Danis Aquaculture</h3><a>danisaquaculture.my ↗</a></div>
+        </article>
+        <article class="tile">
+          <img src="file:///Users/happymarwan/studiopro-site/public/work/buskers.png" alt="">
+          <div><h3>Sabah Buskers</h3><a>sabahbuskers.my ↗</a></div>
+        </article>
+        <article class="tile">
+          <img src="file:///Users/happymarwan/studiopro-site/public/work/zzbeauty.png" alt="">
+          <div><h3>ZZ Beauty</h3><a>zzbeauty.my ↗</a></div>
+        </article>
+        <article class="tile">
+          <img src="file:///Users/happymarwan/studiopro-site/public/work/proart.png" alt="">
+          <div><h3>ProArt Solutions</h3><a>proartsolutions.my ↗</a></div>
+        </article>
+        <article class="tile">
+          <img src="file:///Users/happymarwan/studiopro-site/public/work/marketplace.png" alt="">
+          <div><h3>Buskers Marketplace</h3><a>marketplace.sabahbuskers.my ↗</a></div>
+        </article>
+        <article class="tile">
+          <img src="file:///Users/happymarwan/studiopro-site/public/work/apps.png" alt="">
+          <div><h3>Buskers Apps</h3><a>apps.sabahbuskers.my ↗</a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

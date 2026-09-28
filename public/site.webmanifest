@@ -1,0 +1,21 @@
+{
+  "name": "Studio Pro",
+  "short_name": "Studio Pro",
+  "description": "Web design and development studio in Kota Kinabalu, Sabah.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#060a14",
+  "theme_color": "#060a14",
+  "icons": [
+    {
+      "src": "./favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "./apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
