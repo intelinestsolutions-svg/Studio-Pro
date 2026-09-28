@@ -788,5 +788,106 @@
             document.querySelectorAll('.bp-faq details').forEach(function (d) { d.open = true; });
         });
     </script>
+
+    <!--============ AI CHAT WIDGET (floating, lazy iframe) ============-->
+    <style>
+    .aiw { position: fixed; right: 22px; bottom: 22px; z-index: 1300; display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
+    .aiw-row { display: flex; align-items: center; gap: 10px; }
+    .aiw-label {
+        font-family: var(--f-display); font-weight: 600; font-size: 12px; line-height: 1; letter-spacing: .02em;
+        color: #fff; background: rgba(16,16,20,.9); border: 1px solid var(--dark-line);
+        padding: 9px 13px; border-radius: 999px; box-shadow: var(--shadow-sm); backdrop-filter: blur(6px);
+    }
+    .aiw-fab {
+        width: 58px; height: 58px; border-radius: 50%; border: 1px solid rgba(255,255,255,.22);
+        background: var(--grad); color: #fff; display: grid; place-items: center; cursor: pointer;
+        box-shadow: 0 14px 34px -14px rgba(59,75,244,.65), var(--shadow-lg);
+        transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .aiw-fab:hover { transform: translateY(-2px); box-shadow: 0 18px 40px -14px rgba(124,70,232,.7), var(--shadow-lg); }
+    .aiw-fab:focus-visible { outline: 2px solid #A78BFA; outline-offset: 3px; }
+    .aiw-fab svg { width: 26px; height: 26px; }
+    .aiw-panel {
+        width: min(408px, calc(100vw - 32px));
+        height: min(640px, calc(100vh - 132px));
+        height: min(640px, calc(100dvh - 132px));
+        background: var(--dark); border: 1px solid var(--dark-line); border-radius: var(--r-md);
+        overflow: hidden; display: flex; flex-direction: column; box-shadow: var(--shadow-lg);
+        animation: aiwIn .18s ease;
+    }
+    @keyframes aiwIn { from { opacity: 0; transform: translateY(14px) scale(.98); } to { opacity: 1; transform: none; } }
+    .aiw-bar {
+        display: flex; align-items: center; justify-content: space-between; gap: 10px;
+        padding: 9px 10px 9px 14px;
+        background: linear-gradient(135deg, rgba(59,75,244,.55), rgba(124,70,232,.3));
+        border-bottom: 1px solid var(--dark-line);
+    }
+    .aiw-title { display: flex; align-items: center; gap: 8px; font-family: var(--f-display); font-weight: 600; font-size: 13px; color: #fff; }
+    .aiw-dot { width: 8px; height: 8px; border-radius: 50%; background: #A78BFA; box-shadow: 0 0 8px #A78BFA; }
+    .aiw-close {
+        width: 30px; height: 30px; border-radius: 8px; border: 1px solid rgba(255,255,255,.3);
+        background: rgba(0,0,0,.3); color: #fff; font-size: 14px; line-height: 1; cursor: pointer;
+        transition: background .15s ease, border-color .15s ease;
+    }
+    .aiw-close:hover { background: rgba(238,88,134,.45); border-color: #EE5886; }
+    .aiw-close:focus-visible { outline: 2px solid #A78BFA; outline-offset: 2px; }
+    .aiw-frame { flex: 1; width: 100%; border: 0; background: var(--dark); }
+    @media (max-width: 560px) {
+        .aiw { right: 0; bottom: 0; left: 0; top: 0; align-items: stretch; justify-content: flex-end; gap: 0; pointer-events: none; }
+        .aiw-panel { pointer-events: auto; width: 100vw; height: 100vh; height: 100dvh; border-radius: 0; border: 0; }
+        .aiw-row { pointer-events: auto; position: fixed; right: 16px; bottom: 16px; }
+        .aiw-label { display: none; }
+    }
+    /* `hidden` must win: .aiw-panel/.aiw-row declare display, and an author
+       display rule beats the browser's default [hidden]{display:none} — without
+       this the panel looks open on page load and the close button does nothing. */
+    .aiw [hidden] { display: none !important; }
+    </style>
+    <div class="aiw" id="aiw">
+        <div class="aiw-panel" id="aiwPanel" hidden>
+            <div class="aiw-bar">
+                <span class="aiw-title"><span class="aiw-dot"></span>Studio Pro AI</span>
+                <button class="aiw-close" id="aiwClose" aria-label="Close chat">&#10005;</button>
+            </div>
+            <iframe class="aiw-frame" id="aiwFrame" title="Studio Pro AI chat" src="about:blank"></iframe>
+        </div>
+        <div class="aiw-row" id="aiwRow">
+            <span class="aiw-label">Ask our AI</span>
+            <button class="aiw-fab" id="aiwOpen" aria-label="Open Studio Pro AI chat" aria-expanded="false" aria-controls="aiwPanel">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9.5 9.5 0 0 1-3.3-.6L3 21l1.9-5.2A8.2 8.2 0 0 1 3.6 11.5 8.4 8.4 0 0 1 12 3.1a8.4 8.4 0 0 1 9 8.4Z"/><path d="M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01"/></svg>
+            </button>
+        </div>
+    </div>
+    <script>
+    /* Floating Studio Pro AI chat: nothing is downloaded until the first click,
+       then the panel keeps the same lazy iframe (ai.prostudio.my/?embed=1). */
+    (function () {
+        var panel = document.getElementById('aiwPanel'),
+            row = document.getElementById('aiwRow'),
+            fab = document.getElementById('aiwOpen'),
+            close = document.getElementById('aiwClose'),
+            frame = document.getElementById('aiwFrame'),
+            loaded = false;
+        function open() {
+            if (!loaded) { frame.src = 'https://ai.prostudio.my/?embed=1'; loaded = true; }
+            panel.hidden = false;
+            row.hidden = true;              /* the close button replaces the launcher */
+            fab.setAttribute('aria-expanded', 'true');
+            close.focus();
+        }
+        function shut() {
+            panel.hidden = true;
+            row.hidden = false;
+            fab.setAttribute('aria-expanded', 'false');
+            fab.focus();
+        }
+        fab.addEventListener('click', open);
+        close.addEventListener('click', shut);
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !panel.hidden) shut(); });
+        /* prostudio.my/#ai or ?chat=1 opens it straight away (handy for links) */
+        /* also accepts plain #ai / ?ai (no =1) */
+        if (/(?:^|[#&?])(chat|ai)(?:=1)?(?:&|$)/i.test(location.search + location.hash)) open();
+    })();
+    </script>
 </body>
 </html>
